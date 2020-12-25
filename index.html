@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Kurts Geschichten</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+}
+
+/* Style the header */
+.header {
+  background-color: #f1f1f1;
+  padding: 20px;
+  text-align: center;
+  font-family: Helvetica, sans-serif;
+}
+
+/* Style the top navigation bar */
+.topnav {
+  overflow: hidden;
+  background-color: #333;
+  font-family: Helvetica, sans-serif;
+
+}
+
+/* Create three unequal columns that floats next to each other */
+.column {
+  float: left;
+  padding: 10px;
+}
+
+/* Left and right column */
+.column.side {
+  width: 25%;
+}
+
+/* Middle column */
+.column.middle {
+  width: 50%;
+  font-family: Helvetica, sans-serif;
+  hyphens: auto; 
+  text-align: justify
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Responsive layout - makes the three columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 600px) {
+  .column.side, .column.middle {
+    width: 100%;
+  }
+}
+</style>
+</head>
+<body>
+
+<div class="header">
+  <h1>Heute und damals</h1>
+  <p>Kurts Kurzgeschichten zum <span id="datetime"></span>.</p>
+  <script>
+	function berechne() {
+    var jetzt = new Date(),
+        tag = jetzt.getDate(),
+        tagZahl = jetzt.getDay(),
+        wochentag = ['Sonntag','Montag','Dienstag','Mittwoch','Donnerstag','Freitag','Samstag' ],
+        monatZahl = jetzt.getMonth(),
+ 	monat = ['Januar','Februar','März','April','Mai','Juni','Juli','August','September',    
+                'Oktober','November','Dezember'],
+	text;
+	text = tag + '. ' + monat[monatZahl];
+    document.getElementById('datetime').innerHTML = text;	
+  }
+  berechne()
+  </script>
+</div>
+
+<div class="row">
+  <div class="column side">
+  </div>
+  
+  <div class="column middle">
+    <h2>Weihnachtsfrieden</h2>
+    <p>Kurz nach Mitternacht am Weihnachtsmorgen hört die Mehrheit der im Ersten Weltkrieg verwickelten deutschen Truppen auf, ihre Waffen und Artillerie abzufeuern, und beginnt, Weihnachtslieder zu singen. An bestimmten Stellen entlang der Ost- und Westfront hörten die Soldaten Russlands, Frankreichs und Großbritanniens sogar Blaskapellen, die sich den Deutschen in ihrem freudigen Gesang anschlossen.</p><p>Im ersten Licht der Morgendämmerung tauchten viele deutsche Soldaten aus ihren Schützengräben auf und näherten sich den alliierten Linien im Niemandsland, um in den Muttersprachen ihrer Feinde „Frohe Weihnachten“ zu rufen. Zuerst befürchteten die alliierten Soldaten, es sei ein Trick, aber als sie die Deutschen unbewaffnet sahen, stiegen sie aus ihren Schützengräben und gaben den feindlichen Soldaten die Hand. Die Männer tauschten Geschenke mit Zigaretten und Pflaumenpudding aus und sangen Weihnachtslieder und Lieder. Es gab sogar einen dokumentierten Fall von Soldaten von gegnerischen Seiten, die ein gutmütiges Fußballspiel spielten.</p><p>Der sogenannte Weihnachtsstillstand von 1914 kam nur fünf Monate nach Ausbruch des Krieges in Europa und war eines der letzten Beispiele für den veralteten Begriff der Ritterlichkeit zwischen Feinden in der Kriegsführung. 1915 brach der blutige Konflikt des Ersten Weltkriegs in all seiner technologischen Wut aus, und das Konzept eines weiteren Weihnachtsstillstands wurde undenkbar.</p>
+  </div>
+  
+  <div class="column side">
+  </div>
+</div>
+  
+</body>
+</html>
+
